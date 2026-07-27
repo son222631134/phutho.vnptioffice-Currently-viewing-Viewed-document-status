@@ -15,7 +15,7 @@
 		- Config mode: Chọn Advanced
 	- Security
 		- Store data in incognito mode: Chọn Permanent
-5. Bấm [link này](https://github.com/son222631134/phutho.vnptioffice-Currently-viewing-Viewed-document-status/raw/refs/heads/main/script.user.js) để cài.
-6. Truy cập [VBDH iOffice Phú Thọ](https://phutho.vnptioffice.vn/qlvbdh_pto/main) và sử dụng
+5. Bấm [*link này*](https://github.com/son222631134/phutho.vnptioffice-Currently-viewing-Viewed-document-status/raw/refs/heads/main/script.user.js) để cài.
+6. Truy cập [*VBDH iOffice Phú Thọ*](https://phutho.vnptioffice.vn/qlvbdh_pto/main) và sử dụng
 
 <img width="434" height="239" alt="image" src="https://github.com/user-attachments/assets/52333c13-3316-495c-9cef-513d2fab92d6" />
