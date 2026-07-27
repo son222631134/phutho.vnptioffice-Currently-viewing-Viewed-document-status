@@ -2,8 +2,8 @@
 // @name         Hiện trạng thái Đang xem/Đã xem trên icon iOffice
 // @namespace    http://tampermonkey.net/
 // @version      3.0
-// @description  Giữ nguyên thẻ <i>, thay đổi chữ thành Đang xem/Đã xem
-// @author       Bạn
+// @description  
+// @author       Sơn
 // @match        *://phutho.vnptioffice.vn/*
 // @grant        none
 // ==/UserScript==
