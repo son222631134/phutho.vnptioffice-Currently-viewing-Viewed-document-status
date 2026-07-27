@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Hiện trạng thái Đang xem/Đã xem trên icon iOffice
-// @namespace    http://tampermonkey.net/
-// @version      3.0
-// @description  
+// @namespace    https://github.com/son222631134/phutho.vnptioffice-Currently-viewing-Viewed-document-status
+// @version      1.0
+// @description
 // @author       Sơn
-// @match        *://phutho.vnptioffice.vn/*
+// @match        *://*.vnptioffice.vn/*
+// @allFrames    true
 // @grant        none
 // ==/UserScript==
 
@@ -32,8 +33,6 @@
             content: " Đang xem"; /* Có dấu cách ở đầu để hở ra so với icon */
             font-size: 12px !important;
             font-family: inherit;
-            /*color: black !important;*/
-            /*font-weight: bold;*/
         }
 
         /* 4. Nút ĐÃ XEM (Nút bấm trước đó) */
@@ -53,10 +52,13 @@
         const buttons = document.querySelectorAll('.btn-primary, .btn-success');
 
         buttons.forEach(btn => {
+            // THÊM ĐIỀU KIỆN MỚI: Bỏ qua nếu nút KHÔNG có icon con mắt
+            if (!btn.querySelector('i.fa.fa-eye')) return;
+
             // Nếu nút đang có trạng thái Đang xem / Đã xem -> Không dọn style nữa
             if (btn.classList.contains('tm-btn-dang-xem') || btn.classList.contains('tm-btn-da-xem')) return;
 
-            // Xóa màu rác mặc định của web (ví dụ cái darkred)
+            // Xóa màu rác mặc định của web
             if (btn.style.backgroundColor) btn.style.removeProperty('background-color');
             if (btn.style.color) btn.style.removeProperty('color');
         });
@@ -74,6 +76,9 @@
 
         if (clickedBtn) {
 
+            // THÊM ĐIỀU KIỆN MỚI: Bỏ qua nếu nút vừa bấm KHÔNG có icon con mắt
+            if (!clickedBtn.querySelector('i.fa.fa-eye')) return;
+
             // ----------------------------------------------------
             // A. CHUYỂN NÚT "ĐANG XEM" CŨ THÀNH NÚT "ĐÃ XEM"
             // ----------------------------------------------------
@@ -85,11 +90,7 @@
                 oldBtn.classList.remove('tm-btn-dang-xem');
                 oldBtn.classList.add('tm-btn-da-xem');
 
-                // Xóa màu vàng !important đi để nó trở về màu mặc định (xanh dương/xanh lá)
-                // oldBtn.style.removeProperty('background-color');
-                // oldBtn.style.removeProperty('border-color');
                 oldBtn.style.setProperty('background-color', 'darkred', 'important');
-
             });
 
             // ----------------------------------------------------
@@ -102,10 +103,8 @@
             // Gắn class "Đang xem" vào
             clickedBtn.classList.add('tm-btn-dang-xem');
 
-            // Ép màu nền vàng nổi bật cho nút đang xem
+            // Ép màu nền xanh nổi bật cho nút đang xem
             clickedBtn.style.setProperty('background-color', 'darkgreen', 'important');
-            // clickedBtn.style.setProperty('border-color', 'yellow', 'important');
-
         }
     }, true);
 
