@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Hiện trạng thái Đang xem/Đã xem trên icon iOffice
-// @namespace    https://github.com/son222631134/phutho.vnptioffice-Currently-viewing-Viewed-document-status
 // @version      1.0
 // @description
 // @author       Sơn
 // @match        *://*.vnptioffice.vn/*
 // @allFrames    true
 // @grant        none
+// @updateURL    https://github.com/son222631134/phutho.vnptioffice-Currently-viewing-Viewed-document-status/raw/refs/heads/main/script.user.js
 // ==/UserScript==
 
 (function() {
